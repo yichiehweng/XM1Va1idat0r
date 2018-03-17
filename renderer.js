@@ -1,7 +1,8 @@
 var fs= require('file-system');
 var xml2js= require('xml2js');
 var parser=new xml2js.Parser();
-var PatientController = require("./Controller/PatientController");
+var PatientController = require("./controller/PatientController");
+var MakeUL=require("./util/makeUL")
 
 var btn_upload=document.getElementById("btn_upload");
 
@@ -20,14 +21,20 @@ btn_upload.addEventListener('click',function(){
 
                     var id=patient['identification'][0]['id'];                      
                     var idResult=patientController.valiadteId(id);
-                    console.log(idResult);
+                   
 
                     var MRNNumber=patient['identification'][0]['MRNNumber'];
-                    var MRNNumberResult=patientController.valiadteId(MRNNumber);
-                    console.log(MRNNumberResult);
+                    var MRNNumberResult=patientController.valiadteMRNNumber(MRNNumber);
+
+                    var validationResults=[idResult,MRNNumberResult];
+                     var makeUL=new MakeUL();
+                    document.getElementById('results').appendChild(makeUL.makeTable(validationResults));
                 }
             });
         } 
     });
 
 });
+
+
+

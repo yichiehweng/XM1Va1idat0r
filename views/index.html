@@ -6,8 +6,9 @@
   </head>
   <body>
     <h1>XML Validator</h1>
-      <input type="text" class="search-input js-search-input" placeholder="Please Upload a XML File"/>
-      <button id="btn_upload">Upload</button>
+      <input id="filePath"type="text" class="search-input js-search-input" placeholder="Please Upload a XML File" readonly/>
+      <button id="openFile">Navigate</button>
+      <button id="btn_upload" >Validate</button>
       <div id="results"></div>
     <script>
       require('../renderer.js')

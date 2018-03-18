@@ -1,23 +1,23 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-xml-validator",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A xml validatio Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron main.js",
+    "build_win32": "electron-packager . XMLValidator --platform=win32 --arch=x64 --version=1.8.2 --icon=XML.ico --asar=true --ignore=node_modules/electron-* ",
+    "build_linux": "electron-packager . XMLValidator --platform=linux --arch=x64 --version=1.8.2 --icon=XML.jpg --asar=true --ignore=node_modules/electron-* "
   },
-  "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Nodejs",
+    "XML"
   ],
-  "author": "GitHub",
+  "author": "Weng Yi Chieh",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.8.2"
+    "electron": "~1.8.2",
+    "electron-packager": "^11.1.0"
   },
   "dependencies": {
     "file-system": "^2.2.2",

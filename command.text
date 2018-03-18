@@ -2,3 +2,7 @@
 npm install --save file-system
 npm install --save xml2js
 npm install --save remote
+
+npm install electron-packager --save-dev
+npm run build_win32
+npm run build_linux
